@@ -52,6 +52,9 @@ export class AudioFileServiceBase {
   async GetAudioFileStatus(args: AudioFileFindUniqueArgs): Promise<AudioFile> {
     throw new Error("Not implemented");
   }
+  async GetAudioFileStatus(args: AudioFileFindUniqueArgs): Promise<AudioFile> {
+    throw new Error("Not implemented");
+  }
   async UploadAudioFile(args: AudioFileCreateInput): Promise<AudioFile> {
     throw new Error("Not implemented");
   }
