@@ -183,6 +183,23 @@ export class AudioFileControllerBase {
     return this.service.GetAudioFileStatus(body);
   }
 
+  @common.Get("/status/:id")
+  @swagger.ApiOkResponse({
+    type: AudioFile,
+  })
+  @swagger.ApiNotFoundResponse({
+    type: errors.NotFoundException,
+  })
+  @swagger.ApiForbiddenResponse({
+    type: errors.ForbiddenException,
+  })
+  async GetAudioFileStatusCorrected(
+    @common.Body()
+    body: AudioFileCreateInput
+  ): Promise<AudioFile> {
+    return this.service.GetAudioFileStatusCorrected(body);
+  }
+
   @common.Post("/upload")
   @swagger.ApiOkResponse({
     type: AudioFile,

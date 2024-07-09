@@ -114,6 +114,14 @@ export class AudioFileResolverBase {
     return this.service.GetAudioFileStatus(args);
   }
 
+  @graphql.Query(() => AudioFile)
+  async GetAudioFileStatusCorrected(
+    @graphql.Args()
+    args: AudioFileFindUniqueArgs
+  ): Promise<AudioFile> {
+    return this.service.GetAudioFileStatusCorrected(args);
+  }
+
   @graphql.Mutation(() => AudioFile)
   async UploadAudioFile(
     @graphql.Args()
